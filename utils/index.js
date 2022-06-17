@@ -1,7 +1,7 @@
 import fs from 'fs'
 import path from 'path'
 // 递归获取文件
-export const getFiles = (dir) => {
+export const getFiles = (dir, splitStr = 'posts/') => {
   const files = fs.readdirSync(dir);
   const result = [];
   files.forEach((file) => {
@@ -10,7 +10,7 @@ export const getFiles = (dir) => {
     if (stat.isDirectory()) {
       result.push(...getFiles(filePath));
     } else {
-      result.push(filePath.replace(/\\/g, '/').split('posts/')[1]);
+      result.push(filePath.replace(/\\/g, '/').split(splitStr)[1]);
     }
   });
   return result;
