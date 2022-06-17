@@ -3,10 +3,10 @@ title: "node递归获取文件"
 date: "2022-06-17"
 ---
 
-[]: # Language: markdown
-[]: # Path: posts\note\node 递归获取文件.md
+*Language: markdown*
+[posts\note\node递归获取文件.md](node递归获取文件)
 
-```bash
+```js
   import fs from 'fs'
   import path from 'path'
   // 递归获取文件
