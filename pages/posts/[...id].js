@@ -3,19 +3,24 @@ import Head from 'next/head';
 import { getAllPostIds, getPostData } from '../../lib/posts'
 import Date from '../../components/date';
 import utilStyles from '../../styles/utils.module.css';
-
+// import hljs from 'highlight.js';
+// import '../../components/shades-of-purple.css'
 export default function Post({ postData }) {
   return (
     <Layout>
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <article class="prose">
+      <article className='prose'>
         <h1 className={utilStyles.headingXl}>{postData.title}</h1>
         <div className={utilStyles.lightText}>
           <Date dateString={postData.date} />
         </div>
+        {/* <div dangerouslySetInnerHTML={{ __html: hljs.highlight(postData.contentHtml, { language: 'js'}).value }} /> */}
         <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
+        {/* <div>
+          {hljs.highlight(postData.contentHtml, { language: 'js'}).value}
+        </div> */}
       </article>
     </Layout>
   );
