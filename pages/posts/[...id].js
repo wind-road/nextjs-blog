@@ -22,9 +22,19 @@ export default function Post({ postData }) {
 }
 
 export async function getStaticPaths() {
-  const paths = getAllPostIds()
+  const paths = getAllPostIds().map(path => {
+    const newPath = path.params.id.split('/')
+    return {
+      params: {
+        // id: newPath.length > 1 ? newPath : newPath[0]
+        id: newPath
+      }
+    }
+  })
+  // console.log(paths)
   return {
     paths,
+    // paths,
     fallback: false
   }
 }
