@@ -12,6 +12,9 @@ export default function Home({ allPostsData }) {
       </Head>
       <section className={utilStyles.headingMd}>
         <p>[大家好，我是一名小白前端工程师一枚。]</p>
+        <a href="https://github.com/heartbeatSeries/nextjs-blog" target="_blank">
+          <p>[此项目在github开源]</p>
+        </a>
       </section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>博客</h2>
